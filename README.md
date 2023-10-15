@@ -1,4 +1,4 @@
-# EchoArea
+# Text-to-Speech & Speech-to-Text
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 

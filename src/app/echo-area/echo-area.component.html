@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+<!--  <span>{{userLocale}}</span>-->
+  <mat-form-field>
+    <mat-label>Voice options</mat-label>
+    <mat-select [(ngModel)]="selectedLanguageRecognizerValue">
+      <mat-option *ngFor="let lang of langSupport" [value]="lang">
+        {{lang.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+          (click)="isUserSpeaking ? stopRecording() : startRecording()">
+    <mat-icon [ngStyle]="{'color': (isUserSpeaking) ? 'red' : 'white'}">mic</mat-icon>
+  </button>
+  <mat-form-field style="width: 400px">
+    <mat-label>Voice options</mat-label>
+    <mat-select [(ngModel)]="selectedVoiceValue">
+      <mat-option *ngFor="let voice of voices$ | async" [value]="voice">
+        {{voice.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+          (click)="isPlayback ? stopPlayback() : startPlayback()">
+    <mat-icon [ngStyle]="{'color': (isPlayback$ | async) ? 'red' : 'white'}">volume_up</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-form-field class="full-width">
+  <textarea style="height: 400px" matInput placeholder="Start typing..." name="text" [(ngModel)]="text"></textarea>
+</mat-form-field>
+
+

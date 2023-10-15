@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'echo-area';
+  title = 'Text-to-Speech & Speech-to-Text';
 }
